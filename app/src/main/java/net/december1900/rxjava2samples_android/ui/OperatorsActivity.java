@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import net.december1900.rxjava2samples_android.MyApplication;
 import net.december1900.rxjava2samples_android.R;
 import net.december1900.rxjava2samples_android.ui.operators.RxConcatActivity;
 import net.december1900.rxjava2samples_android.ui.operators.RxDisposableActivity;
@@ -18,15 +19,15 @@ public class OperatorsActivity extends AppCompatActivity {
     }
 
     public void startDisposableActivity(View view){
-        RxDisposableActivity.start(getApplicationContext());
+        RxDisposableActivity.start(MyApplication.sContext);
     }
 
     public void startMapActivity(View view){
-        RxMapActivity.start(getApplicationContext());
+        RxMapActivity.start(MyApplication.sContext);
     }
 
     public void startConcatActivity(View view){
-        RxConcatActivity.start(getApplicationContext());
+        RxConcatActivity.start(MyApplication.sContext);
     }
 
 }

@@ -43,7 +43,10 @@ public class RxConcatActivity extends AppCompatActivity {
 
     private PreferenceUtil sp;
 
-    private boolean isCache;
+    private boolean isLoad;
+
+    private Product mProduct;
+    private String mProductJson;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -60,7 +63,6 @@ public class RxConcatActivity extends AppCompatActivity {
                 doSomething();
             }
         });
-
     }
 
     private void doSomething() {
@@ -69,14 +71,14 @@ public class RxConcatActivity extends AppCompatActivity {
             @Override
             public void subscribe(@NonNull ObservableEmitter<Product> e) throws Exception {
 
-                Product data = new Gson().fromJson(sp.getString(PreferenceUtil.PRODUCT_INFO), Product.class);
+                Product data = new Gson().fromJson(mProductJson, Product.class);
 
                 if (data != null) {
-                    isCache = true;
+                    isLoad = false;
                     Log.d(TAG, "get data from local\n");
                     e.onNext(data);
                 } else {
-                    isCache = false;
+                    isLoad = true;
                     Log.d(TAG, "request server to load data\n");
                     e.onComplete();
                 }
@@ -89,18 +91,21 @@ public class RxConcatActivity extends AppCompatActivity {
                 .subscribe(new Consumer<Product>() {
                     @Override
                     public void accept(Product product) throws Exception {
-                        if (isCache) {
+                        if (isLoad) {
+                            mProduct = product;
+                            Gson gson = new Gson();
+                            mProductJson = gson.toJson(mProduct);
+                            sp.saveString(PreferenceUtil.PRODUCT_INFO, mProductJson);
+                            Log.d(TAG, "accept : success : load data");
+                        } else {
+                            tv.setText(mProduct._product.get(0).getName());
                             Log.d(TAG, "accept : success : get cache");
-                            tv.append(product.toString());
                         }
-
-                        sp.saveString(PreferenceUtil.PRODUCT_INFO, product.toString());
-                        Log.d(TAG, "accept : success : load data");
                     }
                 }, new Consumer<Throwable>() {
                     @Override
                     public void accept(Throwable throwable) throws Exception {
-                        Log.d(TAG,"onError : " + throwable.getMessage());
+                        Log.d(TAG, "onError : " + throwable.getMessage());
                     }
                 });
     }

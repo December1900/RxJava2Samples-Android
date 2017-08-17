@@ -3,7 +3,7 @@ package net.december1900.rxjava2samples_android.net;
 import net.december1900.rxjava2samples_android.model.Product;
 
 import io.reactivex.Observable;
-import retrofit2.http.POST;
+import retrofit2.http.GET;
 
 /**
  * Created by december on 2017/8/16.
@@ -11,6 +11,6 @@ import retrofit2.http.POST;
 
 public interface RetrofitService {
 
-    @POST("product/")
+    @GET("product/")
     Observable<Product> getProduct();
 }

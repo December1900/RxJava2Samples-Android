@@ -28,5 +28,37 @@ public class Product {
         public String icon;
         public String url;
         public String intro;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getIcon() {
+            return icon;
+        }
+
+        public void setIcon(String icon) {
+            this.icon = icon;
+        }
+
+        public String getUrl() {
+            return url;
+        }
+
+        public void setUrl(String url) {
+            this.url = url;
+        }
+
+        public String getIntro() {
+            return intro;
+        }
+
+        public void setIntro(String intro) {
+            this.intro = intro;
+        }
     }
 }
