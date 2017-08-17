@@ -29,6 +29,8 @@
 
         <activity android:name=".ui.operators.RxConcatActivity"/>
 
+        <activity android:name=".ui.operators.RxFlatMapActivity"/>
+
     </application>
 
 </manifest>
