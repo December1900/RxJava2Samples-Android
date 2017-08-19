@@ -31,6 +31,8 @@
 
         <activity android:name=".ui.operators.RxFlatMapActivity"/>
 
+        <activity android:name=".ui.operators.RxFlowableActivity"/>
+
     </application>
 
 </manifest>

@@ -36,3 +36,4 @@ I'm also using Retrofit, so add the following
 + **[RxDisposableActivity](https://github.com/December1900/RxJava2Samples-Android/blob/master/app/src/main/java/net/december1900/rxjava2samples_android/ui/operators/RxDisposableActivity.java)** -> Use `CompositeDisposable`
 + **[RxFlatMapActivity](https://github.com/December1900/RxJava2Samples-Android/blob/master/app/src/main/java/net/december1900/rxjava2samples_android/ui/operators/RxFlatMapActivity.java)** -> Use `FlatMap` operator and `From` operator
 + **[RxMapActivity](https://github.com/December1900/RxJava2Samples-Android/blob/master/app/src/main/java/net/december1900/rxjava2samples_android/ui/operators/RxMapActivity.java)** -> Use `Map` operator
++ **[RxFlowableActivity](https://github.com/December1900/RxJava2Samples-Android/blob/master/app/src/main/java/net/december1900/rxjava2samples_android/ui/operators/RxFlowableActivity.java)** -> Use `Flowable` operator

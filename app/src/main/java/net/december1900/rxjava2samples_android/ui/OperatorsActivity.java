@@ -9,6 +9,7 @@ import net.december1900.rxjava2samples_android.R;
 import net.december1900.rxjava2samples_android.ui.operators.RxConcatActivity;
 import net.december1900.rxjava2samples_android.ui.operators.RxDisposableActivity;
 import net.december1900.rxjava2samples_android.ui.operators.RxFlatMapActivity;
+import net.december1900.rxjava2samples_android.ui.operators.RxFlowableActivity;
 import net.december1900.rxjava2samples_android.ui.operators.RxMapActivity;
 
 public class OperatorsActivity extends AppCompatActivity {
@@ -33,5 +34,9 @@ public class OperatorsActivity extends AppCompatActivity {
 
     public void startFlatMapActivity(View view){
         RxFlatMapActivity.start(MyApplication.sContext);
+    }
+
+    public void startFlowableActivity(View view){
+        RxFlowableActivity.start(MyApplication.sContext);
     }
 }
