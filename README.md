@@ -14,8 +14,8 @@ I'm also using Retrofit, so add the following
 |---|---|
 |About `backpressure` ![](http://on-img.com/chart_image/59955604e4b0a6812c100916.png)|About `backpressure` ![](http://on-img.com/chart_image/5995587ae4b0b83fa260c4e9.png)
 |when create Observable, callback `Observable.onSubscribe()`|when create Observable, callback `ObservableEmitter<>` and directly `throws Exception`|
-|when create Observer, callback `onNext(),onError(),onCompleted()`, use `CompositeSubscription`|when create Observer, callback `onNext(),onError(),onComplete(),onSubscribe()`, use `CompositeDisposable`|
-|To simplify subscribe, `Fun1, Fun2, Observable`|To simplify subscribe, `Function, BiFunction, Consumer, BiConsumer`|
+|when create Observer, callback `onNext(),onError(),onCompleted()`, use`Subscription`|when create Observer, callback `onNext(),onError(),onComplete(),onSubscribe()`, use `Disposable`|
+|To simplify subscribe, `Fun1, Fun2, Actio1, Action2`|To simplify subscribe, `Function, BiFunction, Consumer, BiConsumer`|
 
 ## Operators :
 + `Interval` —> create an Observable that emits a sequence of integers spaced by a particular time interval
